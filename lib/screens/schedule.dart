@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:nanny_organizer/components/schedule_calendar.dart';
 import 'package:nanny_organizer/components/schedule_card.dart';
