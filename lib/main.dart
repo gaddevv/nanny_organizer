@@ -4,7 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
 import 'package:nanny_organizer/database/client/hive_names.dart';
 import 'package:nanny_organizer/database/database.dart';
-import 'package:nanny_organizer/screens/onboarding/onboarding_widget.dart';
+import 'package:nanny_organizer/screens/onboarding/onboarding.dart';
 import 'package:nanny_organizer/screens/screens.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
         const Locale('ru', 'RU'),
         const Locale('en', 'US'),
       ],
-      home: initScreen == 0 || initScreen == null ? OnboardingWidget() : Screens(),
+      home: initScreen == 0 || initScreen == null ? OnboardingStep1() : Screens(),
     );
   }
 }
