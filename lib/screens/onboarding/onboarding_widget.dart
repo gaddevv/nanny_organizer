@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nanny_organizer/components/custom_button.dart';
+import 'package:nanny_organizer/components/style.dart';
 import 'package:nanny_organizer/globals.dart';
 import 'package:nanny_organizer/screens/screens.dart';
 
@@ -23,146 +24,174 @@ class OnboardingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: double.infinity,
-      color: Color(0xFF726FFF),
-      child: Padding(
-        padding: EdgeInsets.only(top: 60, left: 35, right: 25),
-        child: SingleChildScrollView(
+    return SafeArea(
+      bottom: false,
+      child: Scaffold(
+        backgroundColor: Color.fromRGBO(114, 110, 255, 1),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           child: Column(
             children: [
-              Container(
-                child: Image.asset('$image'),
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.fitWidth,
+                    width: double.infinity,
+                  ),
+                ),
               ),
-              Padding(padding: EdgeInsets.only(top: 20)),
               Container(
-                padding: EdgeInsets.only(left: 15, right: 15, bottom: 15),
-                decoration: BoxDecoration(color: Color(0xFFBCBCE3), borderRadius: BorderRadius.circular(16)),
+                margin: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
+                padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(188, 188, 227, 1),
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      blurStyle: BlurStyle.normal,
+                      blurRadius: 5,
+                      color: Color.fromRGBO(160, 175, 175, 0.25),
+                    ),
+                  ],
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                        padding: EdgeInsets.only(
-                      top: 10,
-                    )),
-                    Text(
-                      title,
-                      style: TextStyle(color: Color(0XFF726EFF), fontSize: 28, fontWeight: FontWeight.w500, fontFamily: 'Roboto'),
+                      padding: EdgeInsets.only(bottom: 10),
+                      child: Text(
+                        title,
+                        style: onboardingTitle,
+                      ),
                     ),
-                    Padding(padding: EdgeInsets.only(top: 10)),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(right: 10, top: 7, left: 10),
-                              height: 3,
-                              width: 3,
-                              decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 5),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(right: 10, top: 7, left: 10),
+                            height: 3,
+                            width: 3,
+                            decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+                          ),
+                          Expanded(
+                            child: Text(
+                              textOne,
+                              style: onboardingText,
                             ),
-                            Expanded(
-                              child: Text(
-                                textOne,
-                                style: TextStyle(color: Color(0XFF0C1654), fontSize: 14, fontWeight: FontWeight.w300, fontFamily: 'Roboto'),
-                              ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 5),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(right: 10, top: 7, left: 10),
+                            height: 3,
+                            width: 3,
+                            decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+                          ),
+                          Expanded(
+                            child: Text(
+                              textTwo,
+                              style: onboardingText,
                             ),
-                          ],
-                        ),
-                        Padding(padding: EdgeInsets.only(top: 5)),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              margin: EdgeInsets.only(right: 10, top: 7, left: 10),
-                              height: 3,
-                              width: 3,
-                              decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.black),
-                            ),
-                            Expanded(
-                              child: Text(
-                                textTwo,
-                                style: TextStyle(color: Color(0XFF0C1654), fontSize: 14, fontWeight: FontWeight.w300, fontFamily: 'Roboto'),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    )
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
-              Padding(padding: EdgeInsets.only(top: 20)),
-              finish!
-                  ? Row(
-                      children: [
-                        Expanded(
-                            child: CustomButton(
-                          onPressed: () {
-                            pushPage(context, Screens());
-                          },
-                          color: Color(0XFF58FFE3),
-                          borderRadius: BorderRadius.circular(16),
-                          child: Text(
-                            'Начать',
-                            style: TextStyle(color: Color(0XFF0C1654), fontSize: 16, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),
-                          ),
-                        )),
-                      ],
-                    )
-                  : Row(
-                      children: [
-                        Expanded(
-                            child: CustomButton(
-                          onPressed: () {
-                            pushPage(context, Screens());
-                          },
-                          borderRadius: BorderRadius.circular(16),
-                          child: Text(
-                            'Пропустить',
-                            style: TextStyle(color: Color(0XFF0C1654), fontSize: 16, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),
-                          ),
-                        )),
-                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                        Expanded(
-                            child: CustomButton(
-                          onPressed: () {
-                            pushPage(context, nextScreen);
-                          },
-                          color: Color(0XFF58FFE3),
-                          borderRadius: BorderRadius.circular(16),
-                          child: Text(
-                            'Продолжить',
-                            style: TextStyle(color: Color(0XFF0C1654), fontSize: 16, fontWeight: FontWeight.w400, fontFamily: 'Roboto'),
-                          ),
-                        )),
-                      ],
-                    ),
-              Padding(padding: EdgeInsets.only(top: 10)),
               Padding(
-                padding: const EdgeInsets.only(left: 30),
+                padding: const EdgeInsets.symmetric(vertical: 5),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      'Условия использования',
-                      style: TextStyle(color: Color(0XFFBCBCE3), fontSize: 10, fontWeight: FontWeight.w300, fontFamily: 'Roboto'),
+                    Expanded(
+                      child: CustomButton(
+                        onPressed: () {
+                          pushPage(context, Screens());
+                        },
+                        height: 40,
+                        child: Text(
+                          'Пропустить',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'Prata',
+                          ),
+                        ),
+                      ),
                     ),
-                    Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10),
-                      color: Color(0XFF58FFE3),
-                      height: 12,
-                      width: 1,
-                    ),
-                    Text(
-                      'Политика конфиденциальности',
-                      style: TextStyle(color: Color(0XFFBCBCE3), fontSize: 10, fontWeight: FontWeight.w300, fontFamily: 'Roboto'),
+                    Expanded(
+                      child: CustomButton(
+                        onPressed: () {
+                          pushPage(context, nextScreen);
+                        },
+                        height: 40,
+                        color: Color.fromRGBO(88, 255, 227, 1),
+                        borderRadius: BorderRadius.circular(16),
+                        child: Text(
+                          'Продолжить',
+                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400, fontFamily: 'Prata'),
+                        ),
+                      ),
                     ),
                   ],
                 ),
-              )
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RawMaterialButton(
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    onPressed: () => launchURL(uri: 'https://flutter.dev'),
+                    child: Text(
+                      'Условия использования ',
+                      textAlign: TextAlign.right,
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'Roboto',
+                        color: Color.fromRGBO(188, 188, 227, 1),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(
+                      horizontal: 10,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(88, 255, 227, 1),
+                    ),
+                    width: 1,
+                    height: 15,
+                  ),
+                  RawMaterialButton(
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    onPressed: () => launchURL(uri: 'https://dart.dev'),
+                    child: Text(
+                      'Политика конфиденциальности',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'Roboto',
+                        color: Color.fromRGBO(188, 188, 227, 1),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
