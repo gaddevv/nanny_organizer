@@ -11,14 +11,14 @@ import 'package:nanny_organizer/screens/views/add_schedule.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
-class HomeWidget extends StatefulWidget {
-  const HomeWidget({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<HomeWidget> createState() => _HomeWidgetState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeWidgetState extends State<HomeWidget> {
+class _HomeScreenState extends State<HomeScreen> {
   filtredDB(DateTime dateDB) {
     filtred.clear();
     scheduleBox.values.forEach((element) {

@@ -80,7 +80,7 @@ flutter:
     - assets/fonts/Roboto/
     - assets/fonts/Prata/
     - assets/icons/
-    - assets/icons/navbar/
+    - assets/icons/navigation-bar/
   
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

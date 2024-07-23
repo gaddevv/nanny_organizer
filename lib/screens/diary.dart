@@ -8,11 +8,11 @@ import 'package:nanny_organizer/components/custom_button.dart';
 import 'package:nanny_organizer/database/database.dart';
 import 'package:nanny_organizer/screens/views/add_note.dart';
 
-class DiaryWidget extends StatefulWidget {
-  const DiaryWidget({super.key});
+class DiaryScreen extends StatefulWidget {
+  const DiaryScreen({super.key});
 
   @override
-  State<DiaryWidget> createState() => _DiaryWidgetState();
+  State<DiaryScreen> createState() => _DiaryScreenState();
 }
 
 final colorBg = Color.fromRGBO(241, 246, 255, 1);
@@ -29,7 +29,7 @@ final styleTextActive = TextStyle(
   fontFamily: 'Roboto',
 );
 
-class _DiaryWidgetState extends State<DiaryWidget> {
+class _DiaryScreenState extends State<DiaryScreen> {
   List<CategoryCustom> category = [
     CategoryCustom(
       id: 0,

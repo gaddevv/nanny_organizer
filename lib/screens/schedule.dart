@@ -8,16 +8,16 @@ import 'package:table_calendar/table_calendar.dart';
 import '../database/adapter/hive_adapter.dart';
 import '../components/calendar_custom.dart';
 
-class ScheduleWidget extends StatefulWidget {
-  const ScheduleWidget({super.key});
+class ScheduleScreen extends StatefulWidget {
+  const ScheduleScreen({super.key});
 
   @override
-  State<ScheduleWidget> createState() => SscheduleState();
+  State<ScheduleScreen> createState() => SscheduleState();
 }
 
 List<ScheduleDB> filtred = [];
 
-class SscheduleState extends State<ScheduleWidget> {
+class SscheduleState extends State<ScheduleScreen> {
   filtredDB(DateTime dateDB) {
     filtred.clear();
     scheduleBox.values.forEach((element) {

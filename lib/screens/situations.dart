@@ -1,5 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
@@ -11,14 +10,14 @@ import 'package:nanny_organizer/screens/views/danger_situations.dart';
 import 'package:nanny_organizer/screens/views/instructions.dart';
 import 'package:nanny_organizer/screens/views/numbers.dart';
 
-class SituationsWidget extends StatefulWidget {
-  const SituationsWidget({super.key});
+class SituationsScreen extends StatefulWidget {
+  const SituationsScreen({super.key});
 
   @override
-  State<SituationsWidget> createState() => _SituationsWidgetState();
+  State<SituationsScreen> createState() => _SituationsScreenState();
 }
 
-class _SituationsWidgetState extends State<SituationsWidget> {
+class _SituationsScreenState extends State<SituationsScreen> {
   bool _isOpenFavourites = false;
   List<ContactDB> favourites = [];
 

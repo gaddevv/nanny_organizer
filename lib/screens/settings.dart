@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:nanny_organizer/components/custom_button.dart';
 import 'package:nanny_organizer/globals.dart';
 
-class SettingsWidget extends StatefulWidget {
-  const SettingsWidget({super.key});
+class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({super.key});
 
   @override
-  State<SettingsWidget> createState() => _SettingsWidgetState();
+  State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-class _SettingsWidgetState extends State<SettingsWidget> {
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
