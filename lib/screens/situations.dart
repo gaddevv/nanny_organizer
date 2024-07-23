@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
-import 'package:nanny_organizer/adapter/hive_adapter.dart';
+import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
 import 'package:nanny_organizer/components/custom_button.dart';
 import 'package:nanny_organizer/database/database.dart';
 import 'package:nanny_organizer/screens/views/add_instructions.dart';

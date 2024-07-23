@@ -1,7 +1,7 @@
 import 'package:hive_flutter/adapters.dart';
-import 'package:nanny_organizer/adapter/hive_adapter.dart';
+import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
 
-import '../client/hive_names.dart';
+import 'client/hive_names.dart';
 
 final diaryBox = Hive.box<DiaryDB>(HiveBoxes.diary);
 final scheduleBox = Hive.box<ScheduleDB>(HiveBoxes.schedule);

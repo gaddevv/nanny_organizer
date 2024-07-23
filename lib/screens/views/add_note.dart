@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
-import 'package:nanny_organizer/adapter/hive_adapter.dart';
+import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
 import 'package:nanny_organizer/components/calendar_custom.dart';
 import 'package:nanny_organizer/components/custom_button.dart';
 import 'package:nanny_organizer/components/custom_textfield.dart';

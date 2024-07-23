@@ -1,10 +1,24 @@
+import 'package:flutter/material.dart';
+
 abstract class ScheduleEvent {}
 
 class SaveScheduleEvent extends ScheduleEvent {
-  final String title;
-  final String descriptions;
+  final int number;
+  final Function()? addCard;
+  final Function()? openTimer;
+  TextEditingController? controller;
+  final Function(String)? onChangedTime;
+  final Function(String)? onChangedName;
+  final Function(String)? onChangedDiscription;
 
-  SaveScheduleEvent({required this.title, required this.descriptions});
+  SaveScheduleEvent(
+    this.number,
+    this.addCard,
+    this.openTimer,
+    this.onChangedTime,
+    this.onChangedName,
+    this.onChangedDiscription,
+  );
 }
 
 class SetScheduleEvent extends ScheduleEvent {}

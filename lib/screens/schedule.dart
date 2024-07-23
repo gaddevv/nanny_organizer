@@ -5,7 +5,7 @@ import 'package:nanny_organizer/components/schedule_card.dart';
 import 'package:nanny_organizer/database/database.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../adapter/hive_adapter.dart';
+import '../database/adapter/hive_adapter.dart';
 import '../components/calendar_custom.dart';
 
 class ScheduleWidget extends StatefulWidget {

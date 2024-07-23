@@ -80,3 +80,12 @@ openCalendar({
     },
   );
 }
+
+Future<T?> pushPage<T>(BuildContext context, Widget page) {
+  return Navigator.of(context).push<T>(
+    PageRouteBuilder(
+      pageBuilder: (_, __, ___) => page,
+      transitionDuration: Duration(seconds: 0),
+    ),
+  );
+}

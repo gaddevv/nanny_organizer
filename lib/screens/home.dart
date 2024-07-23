@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:nanny_organizer/adapter/hive_adapter.dart';
+import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
 import 'package:nanny_organizer/components/calendar_custom.dart';
 import 'package:nanny_organizer/components/custom_button.dart';
 import 'package:nanny_organizer/components/schedule_card.dart';

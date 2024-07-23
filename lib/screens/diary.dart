@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:nanny_organizer/adapter/hive_adapter.dart';
+import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
 import 'package:intl/intl.dart';
 import 'package:nanny_organizer/components/card_widget.dart';
 import 'package:nanny_organizer/components/category_custom.dart';

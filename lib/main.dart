@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:nanny_organizer/adapter/hive_adapter.dart';
-import 'package:nanny_organizer/client/hive_names.dart';
+import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
+import 'package:nanny_organizer/database/client/hive_names.dart';
 import 'package:nanny_organizer/database/database.dart';
-import 'package:nanny_organizer/onboarding/onboarding_widget.dart';
+import 'package:nanny_organizer/screens/onboarding/onboarding_widget.dart';
 import 'package:nanny_organizer/screens/screens.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

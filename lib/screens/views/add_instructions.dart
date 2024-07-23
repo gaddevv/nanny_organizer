@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nanny_organizer/adapter/hive_adapter.dart';
+import 'package:nanny_organizer/database/adapter/hive_adapter.dart';
 import 'package:nanny_organizer/components/custom_button.dart';
 import 'package:nanny_organizer/components/custom_textfield.dart';
 import 'package:nanny_organizer/components/style.dart';

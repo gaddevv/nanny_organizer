@@ -1,14 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
-import 'package:nanny_organizer/adapter/hive_adapter.dart';
 import 'package:nanny_organizer/components/add_schedule_card.dart';
 import 'package:nanny_organizer/components/calendar_custom.dart';
 import 'package:nanny_organizer/components/custom_button.dart';
 import 'package:nanny_organizer/components/schedule_calendar.dart';
 import 'package:nanny_organizer/components/style.dart';
 import 'package:intl/intl.dart';
-import 'package:nanny_organizer/database/database.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class AddSchedule extends StatefulWidget {
@@ -20,12 +18,6 @@ class AddSchedule extends StatefulWidget {
 }
 
 class _AddScheduleState extends State<AddSchedule> {
-  Map<String, dynamic> cardLength = {
-    'number': '',
-    'time': '',
-    'name': '',
-    'discriptions': '',
-  };
   List<Map<String, dynamic>> card = [
     {
       'number': '',
@@ -34,6 +26,13 @@ class _AddScheduleState extends State<AddSchedule> {
       'discriptions': '',
     }
   ];
+  Map<String, dynamic> cardLength = {
+    'number': '',
+    'time': '',
+    'name': '',
+    'discriptions': '',
+  };
+
   String? time;
 
   List<TextEditingController> controllers = [
@@ -97,26 +96,11 @@ class _AddScheduleState extends State<AddSchedule> {
               children: [
                 Expanded(
                   child: CustomButton(
-                    isActive: card.first.entries.every((element) => element.value != ''),
-                    border: card.first.entries.every((element) => element.value != '') == true
-                        ? null
-                        : Border.all(color: Color.fromRGBO(188, 188, 227, 1)),
+                    // isActive: , isActiveScheduleBloc
+                    // border: ,    colorBorder
                     borderRadius: BorderRadius.circular(16),
                     onPressed: () {
-                      card.forEach(
-                        (element) {
-                          if (element.entries.every((element) => element.value != '' && element.value != null))
-                            scheduleBox.add(
-                              ScheduleDB(
-                                id: element['number'] - 1,
-                                time: element['time'],
-                                name: element['name'],
-                                discriptions: element['discriptions'],
-                                dateTime: date,
-                              ),
-                            );
-                        },
-                      );
+                      // сохранение в БД
                       Navigator.pop(context);
                     },
                     child: Text(
@@ -125,14 +109,10 @@ class _AddScheduleState extends State<AddSchedule> {
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Prata',
-                        color: card.first.entries.every((element) => element.value != '') == true
-                            ? Color.fromRGBO(12, 22, 84, 1)
-                            : Color.fromRGBO(188, 188, 227, 1),
+                        // color: , colorText
                       ),
                     ),
-                    color: card.first.entries.every((element) => element.value != '') == true
-                        ? Color.fromRGBO(88, 255, 227, 1)
-                        : Color.fromRGBO(241, 246, 255, 1),
+                    // color: , colorButton
                   ),
                 ),
               ],
